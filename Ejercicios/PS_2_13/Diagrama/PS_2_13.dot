@@ -1,0 +1,26 @@
+digraph PS_2_13 {
+    // Configuración
+    graph [bgcolor="transparent"];
+    node [shape=rect, fontname="Arial", margin="0.1,0.1"];
+    edge [fontname="Arial", fontsize=10];
+
+    // Nodos
+    INICIO [shape=ellipse, label="INICIO"];
+    LEER_NUMS [shape=parallelogram, label="Leer A, B, C"];
+    COND_A [shape=diamond, label="A > B Y A > C"];
+    COND_B [shape=diamond, label="B > C"];
+    PRINT_A [shape=note, label="Escribir A"];
+    PRINT_B [shape=note, label="Escribir B"];
+    PRINT_C [shape=note, label="Escribir C"];
+    FIN [shape=ellipse, label="FIN"];
+
+    // Conexiones
+    INICIO -> LEER_NUMS -> COND_A;
+    COND_A -> PRINT_A [label="Si"]; 
+    COND_A -> COND_B [label="No"];
+    COND_B -> PRINT_B [label="Si"]; 
+    COND_B -> PRINT_C [label="No"];
+    PRINT_A -> FIN;
+    PRINT_B -> FIN;
+    PRINT_C -> FIN;
+}

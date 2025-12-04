@@ -1,0 +1,23 @@
+digraph PS_3_30 {
+    // Configuración
+    graph [bgcolor="transparent"];
+    node [shape=rect, fontname="Arial", margin="0.1,0.1"];
+    edge [fontname="Arial", fontsize=10];
+
+    // Nodos
+    INICIO [shape=ellipse, label="INICIO"];
+    LEER_X [shape=parallelogram, label="Leer X"];
+    INICIALIZAR [label="senX = 0.0\ntermino = X\nnumTerminos = 0"];
+    BUCLE_DO [shape=invhouse, label="Inicio Bucle Do-While"];
+    PROCESO_BUCLE [label="senX += termino\nnumTerminos++\ntermino *= -(X*X) / ((2*numTerminos)*(2*numTerminos+1))"];
+    COND_WHILE [shape=diamond, label="abs(termino) > 0.01"];
+    IMPRIMIR [shape=note, label="Escribir senX,\nnumTerminos"];
+    FIN [shape=ellipse, label="FIN"];
+
+    // Conexiones
+    INICIO -> LEER_X -> INICIALIZAR -> BUCLE_DO;
+    BUCLE_DO -> PROCESO_BUCLE -> COND_WHILE;
+    COND_WHILE -> BUCLE_DO [label="Si"];
+    COND_WHILE -> IMPRIMIR [label="No"];
+    IMPRIMIR -> FIN;
+}
