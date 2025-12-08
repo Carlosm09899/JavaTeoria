@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo 2.1 - Verificar Aprobación</title>
+    <link rel="stylesheet" href="../../styles_desc.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Ejemplo 2.1 - Verificar Aprobación</h1>
+            <p class="subtitle">Ejercicio pag 55</p>
+        </header>
+
+        <main class="exercises-main">
+            <article id="aprobado-alumno" class="exercise-card" aria-labelledby="apr obado-title">
+                <header class="exercise-header">
+                    <span class="exercise-badge">Ejemplo 2.1 pag 55</span>
+                    <h2 id="aprobado-title">Verificar Aprobación (Java)</h2>
+
+                    <p class="exercise-description">
+                        Construya un <strong>programa en Java</strong> que, dado como dato la calificación de un alumno
+                        en un examen, escriba "Aprobado" en caso de que esa calificación sea
+                        mayor a 8.
+                    </p>
+                </header>
+                <a href="./Diagrama/Ejemplo_2_1.png" target="_blank" class="btn-view-diagram">
+                    🗺️ Ver Diagrama de Flujo
+                </a>
+                <div class="exercise-content">
+                    <section class="exercise-main">
+
+                        <h3>Requisitos de Implementación (Java)</h3>
+                        <ul>
+                            <li>Crear una clase principal (ej. <code>VerificarAprobacion</code>).</li>
+                            <li>Usar la clase <code>java.util.Scanner</code> para leer los datos desde la consola.</li>
+                            <li>Solicitar al usuario la calificación (<code>calificacion</code>).</li>
+                            <li>Utilizar una estructura condicional <code>if</code> para evaluar si
+                                <code>calificacion</code> > 8.
+                            </li>
+                            <li>Imprimir "Aprobado" usando <code>System.out.println()</code> solo si la condición es
+                                verdadera.</li>
+                        </ul>
+
+                        <h3>Ejemplo de uso esperado</h3>
+                        <pre><code class="code-block">(Ejecución 1: Calificación > 8)
+Ingrese la calificación: 9.5
+Aprobado
+
+(Ejecución 2: Calificación <= 8)
+Ingrese la calificación: 7.0
+(No se imprime nada)</code></pre>
+                    </section>
+
+                    <aside class="exercise-sidebar">
+                        <h3>Notas rápidas (Java)</h3>
+                        <p class="note-text">Recuerda que:</p>
+                        <ul>
+                            <li>Este problema es un ejemplo de "Estructura Selectiva Simple".</li>
+                            <li>Solo se realiza una acción si la condición es verdadera.</li>
+                            <li>No se necesita una cláusula <code>else</code>, ya que no hay acción para el caso
+                                "falso".</li>
+                        </ul>
+
+                        <div class="tip-box">
+                            <strong>Tip:</strong> La condición es "estrictamente mayor que" (<code>></code>), no "mayor
+                            o igual que"
+                            (<code>>=</code>). Un alumno con 8.0 exacto no cumple la condición.
+                        </div>
+                    </aside>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>

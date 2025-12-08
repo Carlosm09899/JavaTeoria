@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PS 3.30 - Calcular Sen(X) con Serie de Taylor</title>
+    <link rel="stylesheet" href="../../styles_desc.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>PS 3.30 - Calcular Sen(X) con Serie de Taylor</h1>
+            <p class="subtitle">Problema Suplementario pag 430</p>
+        </header>
+
+        <main class="exercises-main">
+            <article id="seno-serie" class="exercise-card" aria-labelledby="seno-title">
+                <header class="exercise-header">
+                    <span class="exercise-badge">PS 3.30 pag 430</span>
+                    <h2 id="seno-title">Calcular Sen(X) con Serie de Taylor (Java)</h2>
+                    <p class="exercise-description">
+                        Construya un <strong>programa en Java</strong> que, dada una X cualquiera (entero),
+                        calcule el SEN(X) utilizando la serie:
+                        <br>
+                        X - X<sup>3</sup>/3! + X<sup>5</sup>/5! - X<sup>7</sup>/7! &hellip;
+                        <br>
+                        El cálculo debe detenerse cuando el valor absoluto del nuevo término a sumar
+                        sea menor o igual a 0.01. Imprima el número de términos requeridos y el resultado.
+                    </p>
+                </header>
+                <a href="./Diagrama/PS_3_30.png" target="_blank" class="btn-view-diagram">
+                    🗺️ Ver Diagrama de Flujo
+                </a>
+                <div class="exercise-content">
+                    <section class="exercise-main">
+
+                        <h3>Requisitos de Implementación (Java)</h3>
+                        <ul>
+                            <li>Usar <code>java.util.Scanner</code> para leer el entero <code>x</code>.</li>
+                            <li>Convertir <code>X</code> a <code>double</code> para los cálculos:
+                                <code>double x_rad = X;</code>.</li>
+                            <li>Inicializar variables:
+                                <ul>
+                                    <li><code>double senX = 0.0;</code></li>
+                                    <li><code>double termino = x_rad;</code> (El primer término es X).</li>
+                                    <li><code>int numeroTerminos = 0;</code></li>
+                                </ul>
+                            </li>
+                            <li>Usar un bucle <code>while (Math.abs(termino) > 0.01)</code> o <code>do-while</code>.
+                            </li>
+                            <li>Dentro del bucle:
+                                <ol>
+                                    <li>Añadir el término a la suma: <code>senX += termino;</code>.</li>
+                                    <li>Incrementar el contador: <code>numeroTerminos++;</code>.</li>
+                                    <li>Calcular el siguiente término eficientemente:
+                                        <code>termino *= -(x_rad * x_rad) / ((2 * numeroTerminos) * (2 * numeroTerminos + 1));</code>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>Al salir del bucle, imprimir <code>senX</code> y <code>numeroTerminos</code>.</li>
+                        </ul>
+
+                        <h3>Ejemplo de uso esperado</h3>
+                        <pre><code class="code-block">(Ejecución 1)
+Ingrese el valor de X (entero en radianes): 1
+SEN(X) ≈ 0.8333333333333334
+Número de términos requeridos: 2
+
+(Ejecución 2)
+Ingrese el valor de X (entero en radianes): 2
+SEN(X) ≈ 0.9079365079365079
+Número de términos requeridos: 4</code></pre>
+                    </section>
+                    <aside class="exercise-sidebar">
+                        <h3>Notas rápidas (Java)</h3>
+                        <p class="note-text">Recuerda que:</p>
+                        <ul>
+                            <li>La variable <code>X</code> de entrada se interpreta como <strong>radianes</strong>.</li>
+                            <li>Usar <code>Math.abs()</code> es crucial para la condición del bucle.</li>
+                            <li><strong>Tip de Eficiencia:</strong> Calcular cada término desde cero (con potencias y
+                                factoriales) es
+                                muy ineficiente y propenso a errores de desbordamiento. La mejor estrategia es calcular
+                                el siguiente
+                                término basándose en el término actual.</li>
+                        </ul>
+                    </aside>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>
