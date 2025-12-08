@@ -28,7 +28,8 @@
                         $150,000.
                     </p>
                 </header>
-                <a href="./Diagrama/PS_4_22.png" target="_blank" class="btn-view-diagram">
+                <a href="./Diagrama/PS_4_22.png" target="_blank" class="btn-view-diagram"
+                    style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; margin: 16px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); transition: all 0.3s ease; border: none; cursor: pointer;">
                     🗺️ Ver Diagrama de Flujo
                 </a>
                 <div class="exercise-content">
@@ -43,18 +44,21 @@
                                 <ul>
                                     <li>Leer la clave <code>fabricas[i]</code>.</li>
                                     <li>Usar un bucle <code>for</code> anidado (de 0 a 11) para leer
-                                        <code>produccion[i][j]</code>.</li>
+                                        <code>produccion[i][j]</code>.
+                                    </li>
                                 </ul>
                             </li>
                             <li><strong>Inciso a):</strong>
                                 <ul>
                                     <li>Inicializar <code>double maxProduccion = -1.0;</code> y
-                                        <code>int fabricaMax = -1;</code>.</li>
+                                        <code>int fabricaMax = -1;</code>.
+                                    </li>
                                     <li>Usar un bucle <code>for</code> (de 0 a N-1) para cada fábrica:
                                         <ul>
                                             <li>Calcular <code>double totalAnual = 0;</code> sumando
                                                 <code>produccion[i][j]</code> para j de 0
-                                                a 11.</li>
+                                                a 11.
+                                            </li>
                                             <li>Si <code>totalAnual > maxProduccion</code>, actualizar
                                                 <code>maxProduccion = totalAnual;</code> y
                                                 <code>fabricaMax = fabricas[i];</code>.
@@ -73,7 +77,8 @@
                                     <li>Usar un bucle <code>for</code> (de 0 a N-1) para cada fábrica:
                                         <ul>
                                             <li>Si <code>produccion[i][indiceMes] > 150000</code>, imprimir
-                                                <code>fabricas[i]</code>.</li>
+                                                <code>fabricas[i]</code>.
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -110,7 +115,8 @@ Fábricas con producción > 150000 en el mes 2:
                                 las claves
                                 (<code>fabricas</code>) y otro para los datos (<code>produccion</code>), donde el índice
                                 <code>i</code>
-                                conecta la clave de una fábrica con su fila de producción.</li>
+                                conecta la clave de una fábrica con su fila de producción.
+                            </li>
                             <li>Los meses van de 1 a 12, pero los índices del arreglo van de <strong>0 a 11</strong>.
                                 Ajusta al
                                 leer/consultar.</li>
