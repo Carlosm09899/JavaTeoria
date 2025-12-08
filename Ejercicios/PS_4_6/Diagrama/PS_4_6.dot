@@ -6,16 +6,14 @@ digraph PS_4_6 {
 
     // Nodos
     INICIO [shape=ellipse, label="INICIO"];
-    NOTA [shape=note, label="Implementación usa el método\ngenerarFibonacci(int n)"];
-    INICIALIZAR [label="cantidad = 100\nfibonacci = nuevo BigInteger[cantidad]\nfibonacci[0] = 0\nfibonacci[1] = 1"];
+    INICIALIZAR [label="cantidad = 100\nfibonacci = nuevo BigInteger[cantidad]\nfibonacci[0] = BigInteger.ZERO\nfibonacci[1] = BigInteger.ONE"];
     BUCLE_FOR [shape=diamond, label="Para i desde 2\nhasta cantidad-1"];
     CALCULAR_FIB [label="fibonacci[i] = fibonacci[i-1]\n+ fibonacci[i-2]"];
     IMPRIMIR [shape=egg, label="Escribir arreglo 'fibonacci'"];
     FIN [shape=ellipse, label="FIN"];
 
     // Conexiones
-    INICIO -> NOTA;
-    NOTA -> INICIALIZAR;
+    INICIO -> INICIALIZAR;
     INICIALIZAR -> BUCLE_FOR;
     BUCLE_FOR -> CALCULAR_FIB [label="Repetir"];
     CALCULAR_FIB -> BUCLE_FOR;
